@@ -2,37 +2,43 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.RadioButton {
+  display: inline-block;
+  vertical-align: text-top;
+  font-size: 20px;
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.SubmitButton {
+  display: inline-block;
+  vertical-align: text-top;
+  font-size: 20px;
+  padding-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Background {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(185, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
+.QuestionGroup {
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  width: 10%;
+  background-color: rgb(230, 230, 230);
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SubmitGroup {
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+  width: 10%;
+  background-color: rgb(230, 230, 230);
+  padding: 20px;
 }
