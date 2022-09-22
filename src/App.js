@@ -1,29 +1,84 @@
+import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="Background">
-      <div className="QuestionGroup">
-        <div className="RadioButton">
-          <input type="radio" value="Choice1" name="choice" /> Answer1
-        </div>
-        <div className="RadioButton">
-          <input type="radio" value="Choice2" name="choice" /> Answer2
-        </div>
-        <div className="RadioButton">
-          <input type="radio" value="Choice3" name="choice" /> Answer3
-        </div>
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "React",
+    };
+    this.onValueChange = this.onValueChange.bind(this);
+    this.formSubmit = this.formSubmit.bind(this);
+  }
+
+  onValueChange(event) {
+    this.setState({
+      selectedOption: event.target.value,
+    });
+  }
+
+  formSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.selectedOption);
+  }
+
+  render() {
+    return (
+      <div className="Background">
+        <form onSubmit={this.formSubmit}>
+          <div className="QuestionGroup">
+            <div className="RadioButton">
+              <label>
+                <input
+                  type="radio"
+                  value="Choice1"
+                  name="choice"
+                  checked={this.state.selectedOption === "Choice1"}
+                  onChange={this.onValueChange}
+                />
+                {" Choice 1"}
+              </label>
+            </div>
+            <div className="RadioButton">
+              <label>
+                <input
+                  type="radio"
+                  value="Choice2"
+                  name="choice"
+                  checked={this.state.selectedOption === "Choice2"}
+                  onChange={this.onValueChange}
+                />
+                {" Choice 2"}
+              </label>
+            </div>
+            <div className="RadioButton">
+              <label>
+                <input
+                  type="radio"
+                  value="Choice3"
+                  name="choice"
+                  checked={this.state.selectedOption === "Choice3"}
+                  onChange={this.onValueChange}
+                />
+                {" Choice 3"}
+              </label>
+            </div>
+          </div>
+          <div className="SubmitGroup">
+            <button className="SubmitButton" type="submit">
+              {"Submit"}
+            </button>
+            <button className="SubmitButton" type="button">
+              {"Next"}
+            </button>
+          </div>
+          <div>
+            Currently selected (for testing) : {this.state.selectedOption}
+          </div>
+        </form>
       </div>
-      <div className="SubmitGroup">
-        <div className="SubmitButton">
-          <input type="button" value="Submit" />
-        </div>
-        <div className="SubmitButton">
-          <input type="button" value="Next" />
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

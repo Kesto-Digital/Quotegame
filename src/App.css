@@ -22,13 +22,13 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: rgb(185, 255, 255);
+  background-color: rgb(120, 185, 185);
 }
 
 .QuestionGroup {
   display: flex;
   flex-direction: column;
-  height: 10%;
+  height: 20%;
   width: 10%;
   background-color: rgb(230, 230, 230);
   padding: 20px;
@@ -37,8 +37,9 @@
 .SubmitGroup {
   display: flex;
   flex-direction: row;
-  height: 5%;
-  width: 10%;
+  height: 20%;
+  width: 11%;
   background-color: rgb(230, 230, 230);
-  padding: 20px;
+  padding-top: 60px;
+  padding-left: 20px;
 }
